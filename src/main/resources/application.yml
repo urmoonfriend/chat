@@ -1,0 +1,28 @@
+app:
+  db:
+    url: jdbc:postgresql://127.0.0.1:5433/chat_db
+    username: postgres
+    password: postgres
+spring:
+  application:
+    name: chat
+  main:
+    banner-mode: off
+  datasource:
+    url: ${app.db.url}
+    username: ${app.db.username}
+    password: ${app.db.password}
+    driver-class-name: org.postgresql.Driver
+server:
+  port: 58087
+  servlet:
+    context-path: /chat
+
+logging:
+  level:
+    org:
+      springframework: ERROR
+      hibernate: ERROR
+      apache: ERROR
+    kz:
+      aldi: DEBUG
